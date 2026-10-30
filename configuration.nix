@@ -112,6 +112,6 @@ in {
 #			alias gittype="nix run github:unhappychoice/gittype"
 
 #			${pkgs.fastfetch}/bin/fastfetch
-		'';
+#		'';
 	};
 }
