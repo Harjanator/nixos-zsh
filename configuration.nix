@@ -52,16 +52,16 @@ in {
 #    programs.oh-my-posh = {
 #      enable = true;
 #      enableZshIntegration = true;
-#      configFile = "${home}/.config/ohmyposh/zen.toml";
+#,      configFile = "${home}/.config/ohmyposh/zen.toml";
 #    };
 
-    programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      options = [
-        "--cmd cd" 
-      ];
-    };
+#    programs.zoxide = {
+#      enable = true;
+#      enableZshIntegration = true;
+#      options = [
+#        "--cmd cd" 
+#      ];
+#    };
 
 	programs.zsh = {
 		enable = true;
