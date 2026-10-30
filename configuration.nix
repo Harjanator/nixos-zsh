@@ -52,7 +52,7 @@ in {
     programs.oh-my-posh = {
       enable = true;
       enableZshIntegration = true;
-      configFile = ${home}/.config/ohmyposh/zen.toml;
+      configFile = "${home}/.config/ohmyposh/zen.toml";
     };
 
     programs.zoxide = {
