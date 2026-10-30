@@ -49,7 +49,7 @@ in {
 
 			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-            source ${pkgs.zinit}/share/zinit/zinit.zsh"
+            source ${pkgs.zinit}/share/zinit/zinit.zsh
 #			eval "$(${pkgs.starship}/bin/starship init zsh)"
 
 #			if [ -z "$SSH_AUTH_SOCK" ]; then
