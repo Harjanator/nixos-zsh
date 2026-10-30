@@ -23,16 +23,22 @@ in {
 		zsh
 		zsh-autosuggestions
 		zsh-syntax-highlighting
-		starship
-		openssh
-		vim
-		neovim
+		oh-my-posh
+		zinit 
+		zoxide 
+		zsh-fzf-tab 
+        nix-zsh-completions
+
+#		starship
+#		openssh
+#		vim
+#		neovim
 		eza
-		fastfetch
-		pnpm
+#		fastfetch
+#		pnpm
 	];
 
-	services.openssh.enable = true;
+#	services.openssh.enable = true;
 
 	programs.zsh = {
 		enable = true;
@@ -43,36 +49,36 @@ in {
 
 			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-			eval "$(${pkgs.starship}/bin/starship init zsh)"
+#			eval "$(${pkgs.starship}/bin/starship init zsh)"
 
-			if [ -z "$SSH_AUTH_SOCK" ]; then
-				eval "$(${pkgs.openssh}/bin/ssh-agent -s)" &>/dev/null
-			fi
+#			if [ -z "$SSH_AUTH_SOCK" ]; then
+#				eval "$(${pkgs.openssh}/bin/ssh-agent -s)" &>/dev/null
+#			fi
 
-			${pkgs.openssh}/bin/ssh-add ~/.ssh/typovrak_github &>/dev/null
-			${pkgs.openssh}/bin/ssh-add ~/.ssh/mscholz_dev_gitlab &>/dev/null
-			${pkgs.openssh}/bin/ssh-add ~/.ssh/revres &>/dev/null
-			${pkgs.openssh}/bin/ssh-add ~/.ssh/morgan-scholz-comet-data &>/dev/null
+#			${pkgs.openssh}/bin/ssh-add ~/.ssh/typovrak_github &>/dev/null
+#			${pkgs.openssh}/bin/ssh-add ~/.ssh/mscholz_dev_gitlab &>/dev/null
+#			${pkgs.openssh}/bin/ssh-add ~/.ssh/revres &>/dev/null
+#			${pkgs.openssh}/bin/ssh-add ~/.ssh/morgan-scholz-comet-data &>/dev/null
 
-			export PNPM_HOME="/home/typovrak/.local/share/pnpm"
-			case ":$PATH:" in
-  				*":$PNPM_HOME:"*) ;;
-  				*) export PATH="$PNPM_HOME:$PATH" ;;
-			esac
+#			export PNPM_HOME="/home/typovrak/.local/share/pnpm"
+#			case ":$PATH:" in
+#  				*":$PNPM_HOME:"*) ;;
+#  				*) export PATH="$PNPM_HOME:$PATH" ;;
+#			esac
 
-			export PATH="$PATH:/home/typovrak/.local/bin"
+#			export PATH="$PATH:/home/typovrak/.local/bin"
 
-			export EDITOR=nvim
+#			export EDITOR=nvim
 			
-			alias v=nvim
-			alias vi=nvim
-			alias vim=nvim
-			
+#			alias v=nvim
+#			alias vi=nvim
+#			alias vim=nvim
+#			
 			alias ls="eza -l --icons"
 
-			alias gittype="nix run github:unhappychoice/gittype"
+#			alias gittype="nix run github:unhappychoice/gittype"
 
-			${pkgs.fastfetch}/bin/fastfetch
+#			${pkgs.fastfetch}/bin/fastfetch
 		'';
 	};
 }
