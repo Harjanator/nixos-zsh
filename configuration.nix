@@ -49,11 +49,11 @@ in {
 
 #	services.openssh.enable = true;
 
-    programs.oh-my-posh = {
-      enable = true;
-      enableZshIntegration = true;
-      configFile = "${home}/.config/ohmyposh/zen.toml";
-    };
+#    programs.oh-my-posh = {
+#      enable = true;
+#      enableZshIntegration = true;
+#      configFile = "${home}/.config/ohmyposh/zen.toml";
+#    };
 
     programs.zoxide = {
       enable = true;
@@ -73,6 +73,7 @@ in {
 			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
             source ${pkgs.zinit}/share/zinit/zinit.zsh
+			eval "$(/pkgs.oh-my-posh/share/oh-my-posh init zsh --config ${home}/.config/ohmyposh/zen.toml
 #			eval "$(${pkgs.starship}/bin/starship init zsh)"
 
 #			if [ -z "$SSH_AUTH_SOCK" ]; then
