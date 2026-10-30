@@ -6,6 +6,15 @@ let
 	home = config.users.users.${username}.home;
 in {
 	system.activationScripts.zsh = ''
+
+		mkdir -p ${home}/.config/ohmyposh
+		chown ${username}:${group} ${home}/.config/ohmyposh
+		chmod 700 ${home}/.config/ohmyposh
+
+		cp ${./zen.toml} ${home}/.config/ohmyposh/zen.toml
+		chown ${username}:${group} ${home}/.config/ohmyposh/zen.toml
+		chmod 600 ${home}/.config/ohmyposh/zen.toml
+		
 		cp ${./.zshrc} ${home}/.zshrc
 		chown ${username}:${group} ${home}/.zshrc
 		chmod 600 ${home}/.zshrc
@@ -39,6 +48,20 @@ in {
 	];
 
 #	services.openssh.enable = true;
+
+    programs.oh-my-posh = {
+      enable = true;
+      enableZshIntegration = true;
+      configFile = ${home}/.config/ohmyposh/zen.toml;
+    };
+
+    programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = [
+        "--cmd cd" 
+      ];
+    };
 
 	programs.zsh = {
 		enable = true;
