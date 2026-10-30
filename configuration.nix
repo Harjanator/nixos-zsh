@@ -26,17 +26,25 @@ in {
 
 	users.users.${username} = {
 		shell = pkgs.zsh;
+		packages = with pkgs; [
+			oh-my-posh
+			zinit 
+			zoxide 
+			zsh-fzf-tab 
+			nix-zsh-completions
+    	];
 	};
 
 	environment.systemPackages = with pkgs; [
 		zsh
 		zsh-autosuggestions
 		zsh-syntax-highlighting
-		oh-my-posh
-		zinit 
-		zoxide 
-		zsh-fzf-tab 
-        nix-zsh-completions
+
+#		oh-my-posh
+#		zinit 
+#		zoxide 
+#		zsh-fzf-tab 
+#        nix-zsh-completions
 
 #		starship
 #		openssh
@@ -65,15 +73,15 @@ in {
 
 	programs.zsh = {
 		enable = true;
-		enableCompletion = true;
-		promptInit = ''
-			autoload -Uz compinit
-			compinit
+#		enableCompletion = true;
+#		promptInit = ''
+#			autoload -Uz compinit
+#			compinit
 
-			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-            source ${pkgs.zinit}/share/zinit/zinit.zsh
-			eval "$(/pkgs.oh-my-posh/share/oh-my-posh init zsh --config ${home}/.config/ohmyposh/zen.toml
+#			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#            source ${pkgs.zinit}/share/zinit/zinit.zsh
+#			eval "$(/pkgs.oh-my-posh/share/oh-my-posh init zsh --config ${home}/.config/ohmyposh/zen.toml
 #			eval "$(${pkgs.starship}/bin/starship init zsh)"
 
 #			if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -99,7 +107,7 @@ in {
 #			alias vi=nvim
 #			alias vim=nvim
 #			
-			alias ls="eza -l --icons"
+#			alias ls="eza -l --icons"
 
 #			alias gittype="nix run github:unhappychoice/gittype"
 
