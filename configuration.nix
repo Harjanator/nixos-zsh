@@ -80,7 +80,7 @@ in {
 			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 			source ${pkgs.zinit}/share/zinit/zinit.zsh
-			eval "$(/pkgs.oh-my-posh/share/oh-my-posh init zsh --config ${home}/.config/ohmyposh/paradox.omp.json)"
+			eval "$(${pkgs.oh-my-posh}/bin/oh-my-posh init zsh --config ${home}/.config/ohmyposh/paradox.omp.json)"
 #			eval "$(${pkgs.starship}/bin/starship init zsh)"
 
 #			if [ -z "$SSH_AUTH_SOCK" ]; then
