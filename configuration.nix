@@ -73,7 +73,7 @@ in {
 	programs.zsh = {
 		enable = true;
 #		enableCompletion = true;
-#		promptInit = ''
+		promptInit = ''
 			autoload -Uz compinit
 			compinit
 
@@ -111,7 +111,7 @@ in {
 #			alias gittype="nix run github:unhappychoice/gittype"
 
 			${pkgs.fastfetch}/bin/fastfetch
-#		'';
+		'';
 	};
 
 #  home-manager.users.${username} = { pkgs, ... }: {
