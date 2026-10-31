@@ -15,13 +15,13 @@ in {
 		chown ${username}:${group} ${home}/.config/ohmyposh/zen.toml
 		chmod 600 ${home}/.config/ohmyposh/zen.toml
 		
-#		cp ${./.zshrc} ${home}/.zshrc
-#		chown ${username}:${group} ${home}/.zshrc
-#		chmod 600 ${home}/.zshrc
+		cp ${./.zshrc} ${home}/.zshrc
+		chown ${username}:${group} ${home}/.zshrc
+		chmod 600 ${home}/.zshrc
 
-#		touch ${home}/.zsh_history
-#		chown ${username}:${group} ${home}/.zsh_history
-#		chmod 600 ${home}/.zsh_history
+		touch ${home}/.zsh_history
+		chown ${username}:${group} ${home}/.zsh_history
+		chmod 600 ${home}/.zsh_history
 	'';
 
 	users.users.${username} = {
