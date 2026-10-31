@@ -144,7 +144,7 @@ in {
       #		ControlPersist = "no"
 #	  };
 
-#    programs.zsh = {
+    programs.zsh = {
       enable = true;
       #enableCompletion = true;
       #autosuggestion.enable = true;
@@ -255,7 +255,7 @@ in {
         "--cmd cd" 
       ];
     };
-    
+
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "26.05";
