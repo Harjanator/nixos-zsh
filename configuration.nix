@@ -15,7 +15,7 @@ in {
 		chown ${username}:${group} ${home}/.config/ohmyposh/zen.toml
 		chmod 600 ${home}/.config/ohmyposh/zen.toml
 		
-		cp ${./.zshrc} ${home}/.zshrc
+#		cp ${./.zshrc} ${home}/.zshrc
 		chown ${username}:${group} ${home}/.zshrc
 		chmod 600 ${home}/.zshrc
 
