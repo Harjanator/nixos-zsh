@@ -245,7 +245,8 @@ in {
 	programs.oh-my-posh = {
       enable = true;
       enableZshIntegration = true;
-      configFile ="$HOME/.config/ohmyposh/zen.toml";
+#      configFile ="$HOME/.config/ohmyposh/zen.toml";
+      configFile ="$HOME/.config/ohmyposh/paradox.omp.json";
     };
 
     programs.zoxide = {
