@@ -74,13 +74,13 @@ in {
 		enable = true;
 #		enableCompletion = true;
 #		promptInit = ''
-#			autoload -Uz compinit
-#			compinit
+			autoload -Uz compinit
+			compinit
 
-#			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#            source ${pkgs.zinit}/share/zinit/zinit.zsh
-#			eval "$(/pkgs.oh-my-posh/share/oh-my-posh init zsh --config ${home}/.config/ohmyposh/zen.toml
+			source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+			source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+            source ${pkgs.zinit}/share/zinit/zinit.zsh
+			eval "$(/pkgs.oh-my-posh/share/oh-my-posh init zsh --config ${home}/.config/ohmyposh/paradox.omp.json
 #			eval "$(${pkgs.starship}/bin/starship init zsh)"
 
 #			if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -106,16 +106,16 @@ in {
 #			alias vi=nvim
 #			alias vim=nvim
 #			
-#			alias ls="eza -l --icons"
+			alias ls="eza -l --icons"
 
 #			alias gittype="nix run github:unhappychoice/gittype"
 
-#			${pkgs.fastfetch}/bin/fastfetch
+			${pkgs.fastfetch}/bin/fastfetch
 #		'';
 	};
 
-  home-manager.users.${username} = { pkgs, ... }: {
-    home.packages = with pkgs; [ 
+#  home-manager.users.${username} = { pkgs, ... }: {
+#    home.packages = with pkgs; [ 
       #oh-my-posh 
       #zinit 
       #zoxide 
@@ -124,7 +124,7 @@ in {
       #zsh-completions 
       #zsh-fzf-tab 
       #nix-zsh-completions
-    ];
+#    ];
 
 #    programs.bash.enable = true;
 
@@ -144,8 +144,8 @@ in {
       #		ControlPersist = "no"
 #	  };
 
-    programs.zsh = {
-      enable = true;
+#    programs.zsh = {
+#      enable = true;
       #enableCompletion = true;
       #autosuggestion.enable = true;
       #syntaxHighlighting.enable = true;
@@ -240,26 +240,26 @@ in {
 #        test = "sudo nixos-rebuild test";
       #};
       #history.size = 10000;
-    };
+#    };
     
-	programs.oh-my-posh = {
-      enable = true;
-      enableZshIntegration = true;
+#	programs.oh-my-posh = {
+#      enable = true;
+#      enableZshIntegration = true;
 #      configFile ="$HOME/.config/ohmyposh/zen.toml";
-      configFile ="$HOME/.config/ohmyposh/paradox.omp.json";
-    };
+#      configFile ="$HOME/.config/ohmyposh/paradox.omp.json";
+#    };
 
-    programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      options = [
-        "--cmd cd" 
-      ];
-    };
+#    programs.zoxide = {
+#      enable = true;
+#      enableZshIntegration = true;
+#      options = [
+#        "--cmd cd" 
+#      ];
+#    };
 
     # The state version is required and should stay at the version you
     # originally installed.
-    home.stateVersion = "26.05";
-  };
+#    home.stateVersion = "26.05";
+ # };
 
 }
